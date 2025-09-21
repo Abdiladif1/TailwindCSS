@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Traffic Light</title>
+</head>
+<body>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Traffic Light</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-900">
+  
+  <!-- Traffic Light Container -->
+  <div class="bg-gray-800 p-4 rounded-2xl shadow-lg flex flex-col items-center space-y-4 w-28">
+    
+    <!-- Red Light -->
+    <div id="red" class="w-16 h-16 rounded-full bg-red-600 shadow-inner opacity-100"></div>
+    
+    <!-- Yellow Light -->
+    <div id="yellow" class="w-16 h-16 rounded-full bg-yellow-400 shadow-inner opacity-20"></div>
+    
+    <!-- Green Light -->
+    <div id="green" class="w-16 h-16 rounded-full bg-green-600 shadow-inner opacity-20"></div>
+  
+  </div>
+
+  <script>
+    const red = document.getElementById("red");
+    const yellow = document.getElementById("yellow");
+    const green = document.getElementById("green");
+
+    let current = 0; // 0 = red, 1 = yellow, 2 = green
+
+    function updateLights() {
+      // Reset all lights
+      red.classList.add("opacity-20");
+      yellow.classList.add("opacity-20");
+      green.classList.add("opacity-20");
+
+      // Turn on current light
+      if (current === 0) {
+        red.classList.remove("opacity-20");
+        red.classList.add("opacity-100");
+      } else if (current === 1) {
+        yellow.classList.remove("opacity-20");
+        yellow.classList.add("opacity-100");
+      } else if (current === 2) {
+        green.classList.remove("opacity-20");
+        green.classList.add("opacity-100");
+      }
+
+      // Move to next light
+      current = (current + 1) % 3;
+    }
+
+    // Run sequence every 2 seconds
+    setInterval(updateLights, 2000);
+  </script>
+
+</body>
+</html>
+
+</body>
+</html>
+
+</body>
+</html>
